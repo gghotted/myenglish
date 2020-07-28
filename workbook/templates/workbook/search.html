@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title%}
+<h5>Search</h5>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col p-4">
+        <form>
+            <div class="input-group">
+              <input value="{{word.text}}" name="word" type="text" class="form-control" placeholder="단어" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
+                    <img width="20" src="{% static 'img/search-24px.svg' %}">
+                </button>
+              </div>
+            </div>
+        </form>
+
+        <div class="p-4">
+            <p>{{word.mean | linebreaksbr}}</p>
+            <p>{{word.mean | linebreaksbr}}</p>
+            <p>{{word.mean | linebreaksbr}}</p>
+            <p>{{word.mean | linebreaksbr}}</p>
+        </div>
+
+        <div class="container-md fixed-bottom d-flex flex-row-reverse p-4">
+          <form>
+              <button class="btn btn-light shadow" style="width:48px; height:48px; border-radius: 24px;" type="button">
+                  <img src="{% static 'img/search-24px.svg' %}">
+              </button>
+          </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
